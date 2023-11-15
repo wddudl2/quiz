@@ -7,7 +7,9 @@ import json
 
 
 def home(request):
-    return HttpResponse("response from django")
+    
+    context = {'categories' : Category.objects.all}
+    return render(request, 'home.html' ,context)
 
 
 def get_quiz(request):
